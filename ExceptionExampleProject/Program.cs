@@ -12,18 +12,19 @@ namespace ExceptionExampleProject
 
         static void Method1 ()
         {
-            Method2();
+            try
+            {
+                Method2();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("The exception is caught here...");
+            }
         }
 
         static void Method2()
         {
-            try
-            {
                 Method3();
-            } catch (Exception ex)
-            {
-                Console.WriteLine("The exception is caught here...");
-            }
         }
         static void Method3()
         {
